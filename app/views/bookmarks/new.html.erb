@@ -1,0 +1,12 @@
+<h2>Your bookmark</h2>
+
+<%# <form action="/lists/:list_id/bookmarks" method="post"></form> %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%# f.association :list %>
+  <%= f.association :movie %>
+  <%= f.submit %>
+<% end %>
+
+<p></p>
+<span> <%= link_to "Back to My list", lists_path %> </span>
