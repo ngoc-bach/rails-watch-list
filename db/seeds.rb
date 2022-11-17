@@ -12,7 +12,7 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 
 List.create(name: "Drama")
 List.create(name: "All time favourites")
-List.create(name: "Girl Pwer")
+List.create(name: "Girl Power")
 
 Bookmark.create(comment: "Recommended by John", movie_id: 3, list_id: 2)
 Bookmark.create(comment: "Supperhero movie revisited in 202", movie_id: 1, list_id: 3)

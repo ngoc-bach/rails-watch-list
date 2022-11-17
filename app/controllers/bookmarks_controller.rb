@@ -1,8 +1,9 @@
 class BookmarksController < ApplicationController
+  # We need to find the restaurant associated with the review
   before_action :set_list, only: %i[new create]
   # new_list_bookmark GET  /lists/:list_id/bookmarks/new
   def new
-    # we need @list
+    # we need @list in our `simple_form_for`
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
   end
@@ -11,9 +12,18 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
-    @bookmark.save
+    if @bookmark.save
+      redirect_to list_path(@list)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
-    redirect_to list_path(@list)
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+
+    redirect_to list_path(@bookmark.list), status: :see_other
   end
 
   private

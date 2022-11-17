@@ -6,3 +6,5 @@ class List < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 end
+
+# list.bookmarks => grabs all bookmarks asscociated
