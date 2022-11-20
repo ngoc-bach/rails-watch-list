@@ -1,4 +1,5 @@
 <h1> <%= @list.name %> movie </h1>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 
 <div>
 <h5><strong>Your bookmark 💛</strong></h5>

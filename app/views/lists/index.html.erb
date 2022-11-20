@@ -1,6 +1,7 @@
-<h1>My List 👋</h1>
+<%# <h1>My List 👋</h1> %>
+<%= render 'component/banner_list' %>
 
-<span> <%= link_to "Add new list", new_list_path %> </span>
+<%# <%= link_to "Add new list", new_list_path %>
 
 <ul>
 <% @lists.each do |list| %>
